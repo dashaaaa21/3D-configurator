@@ -1,0 +1,11 @@
+Model Information:
+* title:	Mugen M7 Tuner Car Wheel
+* source:	https://sketchfab.com/3d-models/mugen-m7-tuner-car-wheel-3efc6a0cb9cc44d9adf24e226991a261
+* author:	Martin Trafas (https://sketchfab.com/Bexxie)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Mugen M7 Tuner Car Wheel" (https://sketchfab.com/3d-models/mugen-m7-tuner-car-wheel-3efc6a0cb9cc44d9adf24e226991a261) by Martin Trafas (https://sketchfab.com/Bexxie) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,532 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 20699,
+      "max": [
+        1.0,
+        0.08049996942281723,
+        0.038500070571899414
+      ],
+      "min": [
+        -1.0,
+        -0.08049993962049484,
+        -0.22011297941207886
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 248388,
+      "componentType": 5126,
+      "count": 20699,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 20699,
+      "max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 20699,
+      "max": [
+        0.0,
+        0.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 165592,
+      "componentType": 5126,
+      "count": 20699,
+      "max": [
+        1.2896028757095337,
+        1.5
+      ],
+      "min": [
+        -0.4433790147304535,
+        -0.5
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 331184,
+      "componentType": 5126,
+      "count": 20699,
+      "max": [
+        1.2896028757095337,
+        1.5
+      ],
+      "min": [
+        -0.4433790147304535,
+        -0.5
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 32136,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 496776,
+      "componentType": 5126,
+      "count": 2004,
+      "max": [
+        0.9179340600967407,
+        0.018621178343892097,
+        0.01786138117313385
+      ],
+      "min": [
+        -0.9178103804588318,
+        -0.018621252849698067,
+        -0.01402907632291317
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 520824,
+      "componentType": 5126,
+      "count": 2004,
+      "max": [
+        0.982380211353302,
+        0.9790555834770203,
+        1.0
+      ],
+      "min": [
+        -0.9823792576789856,
+        -0.9790562391281128,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 496776,
+      "componentType": 5126,
+      "count": 2004,
+      "max": [
+        1.2688047885894775,
+        1.2135941982269287
+      ],
+      "min": [
+        0.33403536677360535,
+        -0.2723618149757385
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 512808,
+      "componentType": 5126,
+      "count": 2004,
+      "max": [
+        0.0,
+        0.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 128544,
+      "componentType": 5125,
+      "count": 3300,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 544872,
+      "componentType": 5126,
+      "count": 1280,
+      "max": [
+        0.947238564491272,
+        0.049259405583143234,
+        0.028796985745429993
+      ],
+      "min": [
+        -0.9471175670623779,
+        -0.049258917570114136,
+        -0.036348652094602585
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 560232,
+      "componentType": 5126,
+      "count": 1280,
+      "max": [
+        0.9823798537254333,
+        0.9790554642677307,
+        0.0
+      ],
+      "min": [
+        -0.9823799133300781,
+        -0.979056179523468,
+        -0.49510878324508667
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 528840,
+      "componentType": 5126,
+      "count": 1280,
+      "max": [
+        1.330137014389038,
+        1.2805389165878296
+      ],
+      "min": [
+        0.2311331331729889,
+        -0.5
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 539080,
+      "componentType": 5126,
+      "count": 1280,
+      "max": [
+        0.0,
+        0.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 141744,
+      "componentType": 5125,
+      "count": 1920,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "CN Entertainment (https://sketchfab.com/cn-entertainment)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/sunstrip-led-bar-f7150dbddbf447489e7c986eba4f3d19",
+      "title": "Sunstrip LED Bar"
+    },
+    "generator": "Sketchfab-15.30.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 149424,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 549320,
+      "byteOffset": 149424,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 575592,
+      "byteOffset": 698744,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 331184,
+      "byteOffset": 1274336,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1605520,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_emissive_strength",
+    "KHR_materials_specular"
+  ],
+  "images": [
+    {
+      "uri": "textures/Black_Metal_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Black_Metal",
+      "normalTexture": {
+        "index": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9976881964001023
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0.2855180324876753,
+        0.1723273954611287,
+        0.01996174371790001
+      ],
+      "extensions": {
+        "KHR_materials_emissive_strength": {
+          "emissiveStrength": 10.0
+        }
+      },
+      "name": "Sunstrip",
+      "pbrMetallicRoughness": {
+        "roughnessFactor": 0.2944740403018372
+      }
+    },
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "specularFactor": 1.0
+        }
+      },
+      "name": "Reflectiv",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.8,
+          0.8,
+          0.8,
+          1.0
+        ],
+        "roughnessFactor": 0.0
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Cube.005_Black Metal_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5
+          },
+          "indices": 6,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Cube.005_Sunstrip_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 8,
+            "POSITION": 7,
+            "TEXCOORD_0": 9,
+            "TEXCOORD_1": 10
+          },
+          "indices": 11,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Cube.005_Reflectiv_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 13,
+            "POSITION": 12,
+            "TEXCOORD_0": 14,
+            "TEXCOORD_1": 15
+          },
+          "indices": 16,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sunstrip LED Bar.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        5,
+        6
+      ],
+      "matrix": [
+        50.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -8.14603396959157e-06,
+        -49.99999999999934,
+        0.0,
+        0.0,
+        49.99999999999934,
+        -8.14603396959157e-06,
+        0.0,
+        250.0,
+        98.05724334716797,
+        -4.0249738693237305,
+        1.0
+      ],
+      "name": "Cube.005"
+    },
+    {
+      "mesh": 0,
+      "name": "Cube.005_Black Metal_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Cube.005_Sunstrip_0"
+    },
+    {
+      "mesh": 2,
+      "name": "Cube.005_Reflectiv_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ]
+}
