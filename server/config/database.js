@@ -4,7 +4,7 @@ const connectDB = async () => {
         const mongoURI = process.env.MONGODB_URI;
         
         if (!mongoURI) {
-            console.error('❌ MONGODB_URI is not defined in environment variables!');
+            console.error('MONGODB_URI is not defined in environment variables!');
             process.exit(1);
         }
         
@@ -17,17 +17,17 @@ const connectDB = async () => {
             socketTimeoutMS: 45000,
         });
         
-        console.log('✅ MongoDB connected successfully');
+        console.log('MongoDB connected successfully');
         
         mongoose.connection.on('error', (err) => {
-            console.error('❌ MongoDB connection error:', err);
+            console.error('MongoDB connection error:', err);
         });
         
         mongoose.connection.on('disconnected', () => {
-            console.warn('⚠️ MongoDB disconnected');
+            console.warn('MongoDB disconnected');
         });
     } catch (error) {
-        console.error('❌ Failed to connect to MongoDB:', error.message);
+        console.error('Failed to connect to MongoDB:', error.message);
         console.error('Full error:', error);
         process.exit(1);
     }

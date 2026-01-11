@@ -8,7 +8,7 @@ export function createFavouritesPage(onSelectFavourite) {
         if (!user) {
             page.innerHTML = `
                 <div class="favourites-container">
-                    <button class="close-favourites-btn" id="closeFav">✕</button>
+                    <button class="close-favourites-btn" id="closeFav">X</button>
                     <h1>My Favourites</h1>
                     <div class="no-fav-container">
                         <svg class="no-fav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -24,7 +24,7 @@ export function createFavouritesPage(onSelectFavourite) {
         const favourites = favouritesManager.getFavourites();
         page.innerHTML = `
             <div class="favourites-container">
-                <button class="close-favourites-btn" id="closeFav">✕</button>
+                <button class="close-favourites-btn" id="closeFav">X</button>
                 <div class="favourites-header">
                     <h1>My Favourites</h1>
                     <p class="fav-count">${favourites.length} / 5 configurations saved</p>

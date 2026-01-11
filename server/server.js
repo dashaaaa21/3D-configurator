@@ -81,9 +81,9 @@ app.use((req, res, next) => {
     }
 });
 const server = app.listen(PORT, () => {
-    console.log(`✅ Server running on port ${PORT}`);
-    console.log(`📍 Environment: ${process.env.NODE_ENV}`);
-    console.log(`🔗 Frontend URL: ${FRONTEND_URL}`);
+    console.log(`Server running on port ${PORT}`);
+    console.log(`Environment: ${process.env.NODE_ENV}`);
+    console.log(`Frontend URL: ${FRONTEND_URL}`);
 });
 server.on('error', (error) => {
     if (error.code === 'EADDRINUSE') {
