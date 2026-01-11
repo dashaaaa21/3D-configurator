@@ -1,8 +1,8 @@
 // Ensure API_URL always has /api suffix
 let API_URL = import.meta.env.VITE_API_URL;
 
-// If empty string or undefined, use default
-if (!API_URL || API_URL === '') {
+// If empty string, undefined, or null, use default
+if (!API_URL || API_URL.trim() === '') {
     API_URL = typeof window !== 'undefined' && window.location.hostname === 'localhost' 
         ? 'http://localhost:3002/api' 
         : 'https://threed-configurator-qrxl.onrender.com/api';

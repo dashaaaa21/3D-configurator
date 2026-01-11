@@ -27,7 +27,7 @@ module.exports = {
 		}),
 		new MiniCSSExtractPlugin(),
 		new webpack.DefinePlugin({
-			'import.meta.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL || ''),
+			'import.meta.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL || undefined),
 		}),
 	],
 	module: {
