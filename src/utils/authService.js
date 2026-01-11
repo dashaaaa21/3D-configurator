@@ -11,6 +11,8 @@ class AuthService {
     async register(userData) {
         try {
             console.log('Registering user with API:', API_URL);
+            console.log('Full URL:', `${API_URL}/auth/register`);
+            
             const response = await fetch(`${API_URL}/auth/register`, {
                 method: 'POST',
                 headers: {
@@ -20,12 +22,24 @@ class AuthService {
                 body: JSON.stringify(userData)
             });
             
+            console.log('Response status:', response.status);
+            console.log('Response headers:', response.headers.get('content-type'));
+            
+            // Get response text first to see what we're getting
+            const responseText = await response.text();
+            console.log('Response text:', responseText.substring(0, 200));
+            
             if (!response.ok) {
-                const data = await response.json().catch(() => ({ message: 'Server error' }));
+                let data;
+                try {
+                    data = JSON.parse(responseText);
+                } catch (e) {
+                    throw new Error(`Server error: ${response.status} - ${responseText.substring(0, 100)}`);
+                }
                 throw new Error(data.message || `Server error: ${response.status}`);
             }
             
-            const data = await response.json();
+            const data = JSON.parse(responseText);
             return data;
         } catch (error) {
             console.error('Registration error:', error);
