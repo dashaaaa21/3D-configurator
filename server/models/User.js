@@ -1,35 +1,60 @@
+const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const { v4: uuidv4 } = require('uuid');
-
-class User {
-    constructor({ email, password, name, googleId = null }) {
-        this.userId = uuidv4();
-        this.email = email;
-        this.name = name;
-        this.password = password; 
-        this.googleId = googleId;
-        this.isVerified = false;
-        this.createdAt = new Date();
-        this.updatedAt = new Date();
+const userSchema = new mongoose.Schema({
+    userId: {
+        type: String,
+        required: true,
+        unique: true,
+        default: () => require('uuid').v4()
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        lowercase: true,
+        trim: true
+    },
+    name: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    password: {
+        type: String,
+        required: function() {
+            return !this.googleId;
+        }
+    },
+    googleId: {
+        type: String,
+        default: null
+    },
+    isVerified: {
+        type: Boolean,
+        default: false
     }
-
-
-    static async hashPassword(password) {
-        const saltRounds = 10;
-        return await bcrypt.hash(password, saltRounds);
+}, {
+    timestamps: true
+});
+userSchema.pre('save', async function() {
+    if (!this.isModified('password') || !this.password) {
+        return;
     }
-
-   
-    static async comparePassword(plainPassword, hashedPassword) {
-        return await bcrypt.compare(plainPassword, hashedPassword);
-    }
-
-   
-    toJSON() {
-        const userObject = { ...this };
-        delete userObject.password;
-        return userObject;
-    }
-}
-
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+});
+userSchema.methods.comparePassword = async function(plainPassword) {
+    return await bcrypt.compare(plainPassword, this.password);
+};
+userSchema.methods.toJSON = function() {
+    const userObject = this.toObject();
+    delete userObject.password;
+    delete userObject.__v;
+    return userObject;
+};
+userSchema.statics.hashPassword = async function(password) {
+    const saltRounds = 10;
+    return await bcrypt.hash(password, saltRounds);
+};
+const User = mongoose.model('User', userSchema);
 module.exports = User;

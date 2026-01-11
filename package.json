@@ -10,8 +10,16 @@
     "server": "nodemon server/server.js",
     "server:stable": "node server/start-server.js",
     "server:prod": "node server/server.js",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:db": "node server/test-connection.js",
     "lint": "eslint src --ext .js",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "deploy:setup": "bash scripts/setup-deployment.sh",
+    "deploy:check": "bash scripts/check-deployment.sh",
+    "deploy:vercel": "vercel --prod",
+    "vercel-build": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -61,6 +69,7 @@
     "express-validator": "^7.3.0",
     "gsap": "^3.12.2",
     "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.1.2",
     "nodemailer": "^7.0.10",
     "three": "^0.155.0",
     "uuid": "^11.1.0"

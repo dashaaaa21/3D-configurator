@@ -1,5 +1,4 @@
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-
 const gltfLoader = new GLTFLoader();
 export function addLightInSprinter(scene) {
     gltfLoader.load('./models/lights/sunstrip_led_bar/scene.gltf', (gltf) => {

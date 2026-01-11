@@ -164,3 +164,27 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# CI/CD
+.github/workflows/*.local.yml
+
+# Docker
+docker-compose.override.yml
+
+# PM2
+.pm2
+logs/
+*.log
+
+# Build artifacts
+dist/
+build/
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db

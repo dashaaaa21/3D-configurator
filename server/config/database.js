@@ -1,51 +1,14 @@
-class Database {
-    constructor() {
-        this.users = [];
+const mongoose = require('mongoose');
+const connectDB = async () => {
+    try {
+        const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://daryna2003tk_db_user:<db_password>@configuratorcluaster.fyusirq.mongodb.net/configurator?retryWrites=true&w=majority';
+        await mongoose.connect(mongoURI);
+        mongoose.connection.on('error', (err) => {
+        });
+        mongoose.connection.on('disconnected', () => {
+        });
+    } catch (error) {
+        process.exit(1);
     }
-
-   
-    findUserByEmail(email) {
-        for (let index = 0; index < this.users.length; index++) {
-            if (this.users[index].email === email) {
-                return this.users[index];
-            }
-        }
-        return null;
-    }
-
- 
-    findUserById(userId) {
-        for (let index = 0; index < this.users.length; index++) {
-            if (this.users[index].userId === userId) {
-                return this.users[index];
-            }
-        }
-        return null;
-    }
-
-  
-    createUser(userData) {
-        this.users.push(userData);
-        return userData;
-    }
-
-   
-    updateUser(userId, updates) {
-        for (let index = 0; index < this.users.length; index++) {
-            if (this.users[index].userId === userId) {
-                
-                const keys = Object.keys(updates);
-                
-                for (let keyIndex = 0; keyIndex < keys.length; keyIndex++) {
-                    const key = keys[keyIndex];
-                    this.users[index][key] = updates[key];
-                }
-                
-                return this.users[index];
-            }
-        }
-        return null;
-    }
-}
-
-module.exports = new Database();
+};
+module.exports = connectDB;

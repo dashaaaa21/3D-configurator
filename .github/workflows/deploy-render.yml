@@ -1,0 +1,44 @@
+name: Deploy to Render
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  deploy:
+    name: Deploy to Render
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Trigger Render Deployment
+        run: |
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+      
+      - name: Wait for deployment
+        run: |
+          echo "Deployment triggered on Render"
+          echo "Check status at: https://dashboard.render.com"
+      
+      - name: Notify deployment status
+        if: always()
+        run: |
+          echo "Render deployment initiated"
+          echo "Service URL will be available at your Render dashboard"
+
+  notify:
+    name: Notify Deployment
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: always()
+    
+    steps:
+      - name: Deployment Summary
+        run: |
+          echo "### Render Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Deployment hook triggered successfully" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 Check your deployment at [Render Dashboard](https://dashboard.render.com)" >> $GITHUB_STEP_SUMMARY

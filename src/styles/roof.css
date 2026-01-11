@@ -1,0 +1,95 @@
+.roof-switcher {
+    position: fixed;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.roof-switcher-container {
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(249, 115, 22, 0.3);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.roof-switcher-container h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.roof-options {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.door-options {
+    display: flex;
+    gap: 12px;
+}
+
+.roof-option, .door-option {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 120px;
+}
+
+.roof-option:hover, .door-option:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(249, 115, 22, 0.5);
+    transform: translateY(-2px);
+}
+
+.roof-option.active, .door-option.active {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(234, 88, 12, 0.2));
+    border-color: #f97316;
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+}
+
+.roof-label {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .roof-switcher {
+        bottom: 100px;
+        left: 10px;
+        right: 10px;
+        transform: none;
+    }
+    
+    .roof-switcher-container {
+        padding: 15px;
+    }
+    
+    .roof-options, .door-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .roof-option, .door-option {
+        min-width: auto;
+        width: 100%;
+    }
+}

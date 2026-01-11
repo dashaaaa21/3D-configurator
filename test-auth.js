@@ -3,7 +3,7 @@ const API_URL = 'http://localhost:5001/api';
 async function testAuth() {
     console.log('Testing API...\n');
     
-    // Test 1: Check if server is running
+
     try {
         console.log('1. Checking server...');
         const healthResponse = await fetch(`${API_URL}/health`);
@@ -15,7 +15,7 @@ async function testAuth() {
         return;
     }
     
-    // Test 2: Register new user
+
     console.log('\n2. Testing registration...');
     const testUser = {
         name: 'Test User',
@@ -43,7 +43,7 @@ async function testAuth() {
         console.error('Request error:', error.message);
     }
     
-    // Test 3: Login
+
     console.log('\n3. Testing login...');
     try {
         const loginResponse = await fetch(`${API_URL}/auth/login`, {
@@ -67,7 +67,7 @@ async function testAuth() {
         console.error('Request error:', error.message);
     }
     
-    // Test 4: Check validation
+
     console.log('\n4. Testing validation...');
     try {
         const invalidResponse = await fetch(`${API_URL}/auth/register`, {

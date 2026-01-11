@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-
 export function createPlane() {
     const geometry = new THREE.PlaneGeometry(10, 10);
     const material = new THREE.ShadowMaterial({ opacity: 0.4 });

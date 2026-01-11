@@ -1,20 +1,14 @@
 const { verifyToken } = require('../utils/jwtUtils');
-const database = require('../config/database');
-
-const authenticateUser = (request, response, next) => {
+const User = require('../models/User');
+const authenticateUser = async (request, response, next) => {
     try {
-       
         const token = request.cookies.token || request.headers.authorization?.split(' ')[1];
-        
-    
         if (!token) {
             return response.status(401).json({
                 success: false,
                 message: 'You need to login first'
             });
         }
-        
-  
         const decoded = verifyToken(token);
         if (!decoded) {
             return response.status(401).json({
@@ -22,19 +16,15 @@ const authenticateUser = (request, response, next) => {
                 message: 'Token is not valid. Please login again'
             });
         }
-        
-        
-        const user = database.findUserById(decoded.userId);
+        const user = await User.findOne({ userId: decoded.userId });
         if (!user) {
             return response.status(401).json({
                 success: false,
                 message: 'User not found. Please login again'
             });
         }
-     
         request.user = user;
         next();
-        
     } catch (error) {
         return response.status(500).json({
             success: false,
@@ -43,7 +33,6 @@ const authenticateUser = (request, response, next) => {
         });
     }
 };
-
 module.exports = {
     authenticateUser
 };
