@@ -1,6 +1,12 @@
 try {
     require('dotenv').config({ path: __dirname + '/.env' });
+    console.log('Environment loaded');
+    console.log('NODE_ENV:', process.env.NODE_ENV);
+    console.log('PORT:', process.env.PORT);
+    console.log('MONGODB_URI exists:', !!process.env.MONGODB_URI);
+    console.log('JWT_SECRET exists:', !!process.env.JWT_SECRET);
 } catch (error) {
+    console.error('Error loading .env:', error);
 }
 const express = require('express');
 const path = require('path');

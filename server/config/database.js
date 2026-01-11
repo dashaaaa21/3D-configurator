@@ -1,12 +1,21 @@
 const mongoose = require('mongoose');
 const connectDB = async () => {
     try {
-        const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://daryna2003tk_db_user:<db_password>@configuratorcluaster.fyusirq.mongodb.net/configurator?retryWrites=true&w=majority';
+        const mongoURI = process.env.MONGODB_URI;
+        
+        if (!mongoURI) {
+            console.error('❌ MONGODB_URI is not defined in environment variables!');
+            process.exit(1);
+        }
         
         console.log('Attempting to connect to MongoDB...');
-        console.log('MONGODB_URI exists:', !!process.env.MONGODB_URI);
+        console.log('MongoDB URI exists:', !!mongoURI);
+        console.log('MongoDB URI starts with:', mongoURI.substring(0, 20) + '...');
         
-        await mongoose.connect(mongoURI);
+        await mongoose.connect(mongoURI, {
+            serverSelectionTimeoutMS: 5000,
+            socketTimeoutMS: 45000,
+        });
         
         console.log('✅ MongoDB connected successfully');
         
@@ -19,6 +28,7 @@ const connectDB = async () => {
         });
     } catch (error) {
         console.error('❌ Failed to connect to MongoDB:', error.message);
+        console.error('Full error:', error);
         process.exit(1);
     }
 };
