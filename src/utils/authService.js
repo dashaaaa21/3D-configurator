@@ -2,6 +2,7 @@ const API_URL = import.meta.env.VITE_API_URL || (window.location.hostname === 'l
 class AuthService {
     async register(userData) {
         try {
+            console.log('Registering user with API:', API_URL);
             const response = await fetch(`${API_URL}/auth/register`, {
                 method: 'POST',
                 headers: {
@@ -10,12 +11,19 @@ class AuthService {
                 credentials: 'include',
                 body: JSON.stringify(userData)
             });
-            const data = await response.json();
+            
             if (!response.ok) {
-                throw new Error(data.message || 'Registration failed');
+                const data = await response.json().catch(() => ({ message: 'Server error' }));
+                throw new Error(data.message || `Server error: ${response.status}`);
             }
+            
+            const data = await response.json();
             return data;
         } catch (error) {
+            console.error('Registration error:', error);
+            if (error.message.includes('Failed to fetch') || error.message.includes('502')) {
+                throw new Error('Backend server is not responding. Please try again later.');
+            }
             throw error;
         }
     }
