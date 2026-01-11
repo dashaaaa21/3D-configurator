@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || 'https://threed-configurator-qrxl.onrender.com/api';
+const API_URL = import.meta.env.VITE_API_URL || (window.location.hostname === 'localhost' ? 'http://localhost:3002/api' : 'https://threed-configurator-qrxl.onrender.com/api');
 class AuthService {
     async register(userData) {
         try {

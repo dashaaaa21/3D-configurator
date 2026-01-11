@@ -1,6 +1,7 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -25,6 +26,9 @@ module.exports = {
 			minify: true,
 		}),
 		new MiniCSSExtractPlugin(),
+		new webpack.DefinePlugin({
+			'import.meta.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL || ''),
+		}),
 	],
 	module: {
 		rules: [

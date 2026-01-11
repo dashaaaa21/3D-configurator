@@ -37,7 +37,7 @@ const sizes = {
 const canvas = document.querySelector('.canvas');
 const scene = createScene();
 const camera = createCamera(sizes);
-camera.position.set(0, 2.5, 6);
+camera.position.set(0, 2, 6);
 scene.add(camera);
 const renderer = createRenderer(canvas, sizes);
 const controls = createControls(camera, canvas);
@@ -125,7 +125,7 @@ const bgShadow = createBackgroundShadow();
 document.body.appendChild(bgShadow);
 const toggleButton = createToggleButton();
 document.body.appendChild(toggleButton);
-let currentModel = 'pickup';
+let currentModel = 'sprinter';
 let sprinterModel = null;
 let pickupModel = null;
 function animateCameraForModel(modelType) {
@@ -134,7 +134,7 @@ function animateCameraForModel(modelType) {
             duration: 1,
             x: 0,
             y: 2.5,
-            z: 6,
+            z: 7,
             ease: 'power2.inOut'
         });
     } else {
@@ -142,7 +142,7 @@ function animateCameraForModel(modelType) {
             duration: 1,
             x: 0,
             y: 2,
-            z: 5,
+            z: 6,
             ease: 'power2.inOut'
         });
     }
@@ -199,7 +199,7 @@ const navigationArrows = createNavigationArrows((direction) => {
     }
 });
 document.body.appendChild(navigationArrows);
-const modelTitle = createModelTitle('PickUp');
+const modelTitle = createModelTitle('Sprinter');
 document.body.appendChild(modelTitle);
 colorSwitcher.onColorChange((colorName) => {
     modelTitle.updateColor(colorName);
@@ -302,8 +302,9 @@ loader.load('texture/studio_small_08_1k.exr', (texture) => {
     scene.environmentIntensity = 0.3;
     scene.environment = texture;
 });
-addPickUp(scene, colorSwitcher, (model) => {
-    pickupModel = model;
+addSprinter(scene, colorSwitcher, (model) => {
+    sprinterModel = model;
+    roofSwitcher.setSprinterModel(model);
     wheelsSwitcher.setModels(sprinterModel, pickupModel);
 });
-leftButtons.updateAvailableButtons('pickup');
+leftButtons.updateAvailableButtons('sprinter');

@@ -4,6 +4,6 @@ export function createControls(camera, canvas) {
     const controls = new OrbitControls(camera, canvas);
     controls.enableDamping = true;
     controls.maxPolarAngle = Math.PI * 0.49;
-    controls.maxDistance = 5;
+    controls.maxDistance = 10;
     return controls;
 }
