@@ -1,12 +1,10 @@
-// Ensure API_URL always has /api suffix
-let API_URL = import.meta.env.VITE_API_URL;
-
-// If empty string, undefined, or null, use default
-if (!API_URL || API_URL.trim() === '') {
-    API_URL = typeof window !== 'undefined' && window.location.hostname === 'localhost' 
+// API URL configuration
+const API_BASE = 'https://threed-configurator-qrxl.onrender.com/api';
+const API_URL = import.meta.env.VITE_API_URL && import.meta.env.VITE_API_URL.trim() !== '' 
+    ? import.meta.env.VITE_API_URL 
+    : (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
         ? 'http://localhost:3002/api' 
-        : 'https://threed-configurator-qrxl.onrender.com/api';
-}
+        : API_BASE);
 
 console.log('API_URL configured as:', API_URL);
 class AuthService {
