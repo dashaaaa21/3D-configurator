@@ -28,7 +28,7 @@ jobs:
   deploy-vercel:
     runs-on: ubuntu-latest
     needs: build
-    if: ${{ secrets.VERCEL_TOKEN != '' }}
+    if: false  # Disabled - using Vercel Git Integration instead
     
     steps:
       - uses: actions/checkout@v4
@@ -48,7 +48,7 @@ jobs:
   deploy-render:
     runs-on: ubuntu-latest
     needs: build
-    if: ${{ secrets.RENDER_DEPLOY_HOOK_URL != '' }}
+    if: false  # Disabled - Render auto-deploys from GitHub
     
     steps:
       - run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
