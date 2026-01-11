@@ -14,24 +14,10 @@ services:
       - key: MONGODB_URI
         sync: false
       - key: JWT_SECRET
-        generateValue: true
+        sync: false
       - key: EMAIL_USER
         sync: false
       - key: EMAIL_PASS
         sync: false
     healthCheckPath: /
     autoDeploy: true
-    
-  - type: web
-    name: threejs-app-static
-    env: static
-    buildCommand: npm ci && npm run build
-    staticPublishPath: ./dist
-    pullRequestPreviewsEnabled: true
-    headers:
-      - path: /*
-        name: Cache-Control
-        value: public, max-age=31536000, immutable
-      - path: /
-        name: Cache-Control
-        value: public, max-age=0, must-revalidate
