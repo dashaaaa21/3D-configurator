@@ -19,5 +19,7 @@ services:
         sync: false
       - key: EMAIL_PASS
         sync: false
+      - key: FRONTEND_URL
+        value: https://3-d-configurator-omega.vercel.app
     healthCheckPath: /
     autoDeploy: true

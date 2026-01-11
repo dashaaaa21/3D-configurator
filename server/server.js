@@ -11,8 +11,11 @@ const authRoutes = require('./routes/authRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
-const VERCEL_URL = 'https://3-d-configurator-omega.vercel.app';
-const VERCEL_PREVIEW = 'https://3-d-configurator-rnhxlyau0-dashas-projects-fa234119.vercel.app';
+const VERCEL_URLS = [
+    'https://3-d-configurator-omega.vercel.app',
+    'https://3-d-configurator-rnhxlyau0-dashas-projects-fa234119.vercel.app',
+    'https://3-d-configurator-8gloxxtlu-dashas-projects-fa234119.vercel.app'
+];
 const JWT_SECRET = process.env.JWT_SECRET || 'default_jwt_secret_key_change_in_production';
 const JWT_EXPIRE = process.env.JWT_EXPIRE || '7d';
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -21,7 +24,7 @@ if (!process.env.JWT_EXPIRE) process.env.JWT_EXPIRE = JWT_EXPIRE;
 if (!process.env.NODE_ENV) process.env.NODE_ENV = NODE_ENV;
 connectDB();
 app.use(cors({
-    origin: [FRONTEND_URL, VERCEL_URL, VERCEL_PREVIEW],
+    origin: [FRONTEND_URL, ...VERCEL_URLS],
     credentials: true
 }));
 app.use(express.json());
