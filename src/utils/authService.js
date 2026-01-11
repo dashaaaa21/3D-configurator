@@ -1,10 +1,5 @@
-// API URL configuration
-const API_BASE = 'https://threed-configurator-qrxl.onrender.com/api';
-const API_URL = import.meta.env.VITE_API_URL && import.meta.env.VITE_API_URL.trim() !== '' 
-    ? import.meta.env.VITE_API_URL 
-    : (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
-        ? 'http://localhost:3002/api' 
-        : API_BASE);
+// API URL configuration - HARDCODED to ensure /api is included
+const API_URL = 'https://threed-configurator-qrxl.onrender.com/api';
 
 console.log('API_URL configured as:', API_URL);
 class AuthService {
