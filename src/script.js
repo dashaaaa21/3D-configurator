@@ -1,4 +1,5 @@
 import './styles/main.css';
+import './aiChatInit.js';
 import * as THREE from 'three';
 import gsap from 'gsap';
 import { createPlane } from './objects/plane.js';
@@ -308,3 +309,31 @@ addSprinter(scene, colorSwitcher, (model) => {
     wheelsSwitcher.setModels(sprinterModel, pickupModel);
 });
 leftButtons.updateAvailableButtons('sprinter');
+
+window.addEventListener('ai-color-change', (event) => {
+    const { color } = event.detail;
+    console.log('AI Color Change Event:', color);
+    const currentModelObj = currentModel === 'sprinter' ? sprinterModel : pickupModel;
+    
+    if (currentModelObj) {
+        let materialFound = false;
+        currentModelObj.traverse((child) => {
+            if (child.isMesh && child.material) {
+                console.log('Material name:', child.material.name);
+                // Підтримка різних назв матеріалів для кузова
+                const bodyMaterialNames = ['body', 'Body', 'Carrosserie', 'Paint', 'paint'];
+                if (bodyMaterialNames.includes(child.material.name)) {
+                    child.material.color.set(color);
+                    child.material.needsUpdate = true;
+                    materialFound = true;
+                    console.log('Color applied to material:', child.material.name);
+                }
+            }
+        });
+        if (!materialFound) {
+            console.warn('No body material found. Available materials logged above.');
+        }
+    } else {
+        console.warn('No model loaded');
+    }
+});
