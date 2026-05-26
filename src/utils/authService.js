@@ -1,6 +1,26 @@
 const API_URL = 'https://threed-configurator-qrxl.onrender.com/api';
 
 class AuthService {
+    constructor() {
+        this.token = null;
+    }
+
+    setToken(token) {
+        this.token = token;
+        if (token) {
+            localStorage.setItem('authToken', token);
+        } else {
+            localStorage.removeItem('authToken');
+        }
+    }
+
+    getToken() {
+        if (!this.token) {
+            this.token = localStorage.getItem('authToken');
+        }
+        return this.token;
+    }
+
     async register(userData) {
         try {
             const response = await fetch(`${API_URL}/auth/register`, {
@@ -25,6 +45,11 @@ class AuthService {
             }
             
             const data = JSON.parse(responseText);
+            
+            if (data.token) {
+                this.setToken(data.token);
+            }
+            
             return data;
         } catch (error) {
             if (error.message.includes('Failed to fetch') || error.message.includes('502')) {
@@ -47,6 +72,11 @@ class AuthService {
             if (!response.ok) {
                 throw new Error(data.message || 'Login failed');
             }
+            
+            if (data.token) {
+                this.setToken(data.token);
+            }
+            
             return data;
         } catch (error) {
             throw error;
@@ -62,6 +92,9 @@ class AuthService {
             if (!response.ok) {
                 throw new Error(data.message || 'Logout failed');
             }
+            
+            this.setToken(null);
+            
             return data;
         } catch (error) {
             throw error;
@@ -83,4 +116,8 @@ class AuthService {
         }
     }
 }
-export default new AuthService();
+
+const authServiceInstance = new AuthService();
+
+export const getAuthToken = () => authServiceInstance.getToken();
+export default authServiceInstance;
